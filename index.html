@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Web program TailwindCSS | AndyJs" />
+        <meta name="author" content="andyjavadams" />
+        <link rel="icon" href="https://c.top4top.io/p_208369npm0.png" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-slate-900 h-screen flex justify-center items-center">
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-80">
+            <h2 class="text-center text-xl font-bold mb-4">
+                Kalkulator By
+                <a href="https://dyvsss.me" class="animate-pulse text-sky-500"
+                    >dyvsss</a
+                >
+            </h2>
+            <input
+                type="text"
+                id="hasil"
+                class="block w-full p-2 mb-4 border border-gray-300 rounded"
+                enable
+            />
+
+            <div class="grid grid-cols-4 gap-2">
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('7')"
+                >
+                    7
+                </button>
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('8')"
+                >
+                    8
+                </button>
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('9')"
+                >
+                    9
+                </button>
+                <button
+                    class="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="hapus()"
+                >
+                    C
+                </button>
+
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('4')"
+                >
+                    4
+                </button>
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('5')"
+                >
+                    5
+                </button>
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('6')"
+                >
+                    6
+                </button>
+                <button
+                    class="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="hapusSemua()"
+                >
+                    CE
+                </button>
+
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('1')"
+                >
+                    1
+                </button>
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('2')"
+                >
+                    2
+                </button>
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('3')"
+                >
+                    3
+                </button>
+                <button
+                    class="bg-slate-500 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('/')"
+                >
+                    ÷
+                </button>
+
+                <button
+                    class="bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('0')"
+                >
+                    0
+                </button>
+                <button
+                    class="bg-slate-500 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('.')"
+                >
+                    ,
+                </button>
+                <button
+                    class="bg-slate-500 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('*')"
+                >
+                    ×
+                </button>
+                <button
+                    class="bg-slate-500 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded"
+                    onclick="tambah('-')"
+                >
+                    -
+                </button>
+
+                <button
+                    class="bg-slate-500 hover:bg-slate-400 text-white font-bold py-2 px-4 rounded col-span-2"
+                    onclick="tambah('+')"
+                >
+                    +
+                </button>
+                <button
+                    class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded col-span-2"
+                    onclick="hitung()"
+                >
+                    =
+                </button>
+            </div>
+            <p class="text-center text-sm my-5">© 2024 - andyjavadams</p>
+        </div>
+
+        <script>
+            // Fungsi untuk menambahkan angka ke input
+            function tambah(angka) {
+                document.getElementById("hasil").value += angka;
+            }
+
+            // Fungsi untuk menghapus satu angka
+            function hapus() {
+                var hasil = document.getElementById("hasil").value;
+                document.getElementById("hasil").value = hasil.slice(0, -1);
+            }
+
+            // Fungsi untuk menghapus semua angka
+            function hapusSemua() {
+                document.getElementById("hasil").value = "";
+            }
+
+            // Fungsi untuk menghitung hasil
+            function hitung() {
+                var hasil = eval(document.getElementById("hasil").value);
+                document.getElementById("hasil").value = hasil;
+            }
+        </script>
+    </body>
+</html>
